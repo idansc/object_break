@@ -1,0 +1,30 @@
+[project]
+name = "object-break"
+version = "0.1.0"
+description = "Simulator for objects breaking apart — generates video training data for diffusion models"
+requires-python = ">=3.10"
+dependencies = [
+    "numpy>=1.24",
+    "scipy>=1.10",
+    "trimesh[easy]>=4.0",
+    "manifold3d>=2.0",
+    "pyvista>=0.43",
+    "imageio[ffmpeg]>=2.30",
+    "pydantic>=2.0",
+    "click>=8.0",
+    "tqdm>=4.60",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "pytest-cov", "ruff"]
+
+[project.scripts]
+object-break = "object_break.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

@@ -1,0 +1,23 @@
+fracture:
+  num_pieces: 8
+  impact_point: null  # null = random surface point
+  impact_direction: null  # null = inward normal at impact
+  force_magnitude: 5.0
+  seed_spread: 2.0  # how spread out seeds are from impact (higher = more uniform)
+
+physics:
+  gravity: [0.0, 0.0, -9.81]
+  num_frames: 60
+  fps: 30
+  angular_velocity_scale: 3.0
+  velocity_scale: 2.0
+  damping: 0.01
+
+render:
+  resolution: [512, 512]
+  bg_color: [1.0, 1.0, 1.0]
+  camera_distance: 3.0
+  camera_elevation: 30.0
+  camera_azimuth: 45.0
+  save_frames: true
+  save_video: true
