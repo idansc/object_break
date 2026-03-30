@@ -7,3 +7,5 @@ output/
 .pytest_cache/
 dist/
 build/
+.DS_Store
+.claude/
