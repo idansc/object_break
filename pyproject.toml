@@ -23,7 +23,7 @@ dev = ["pytest", "pytest-cov", "ruff"]
 object-break = "object_break.cli:main"
 
 [tool.setuptools.packages.find]
-where = ["."]
+where = ["src"]
 
 [build-system]
 requires = ["setuptools>=68.0"]

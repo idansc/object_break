@@ -6,8 +6,10 @@ fracture:
   seed_spread: 2.0  # how spread out seeds are from impact (higher = more uniform)
 
 physics:
-  gravity: [0.0, 0.0, -9.81]
+  mode: explode  # explode, impact, split_half, scatter, peel, directional
+  gravity: [0.0, 0.0, 0.0]
   num_frames: 60
+  hold_frames: 9
   fps: 30
   angular_velocity_scale: 3.0
   velocity_scale: 2.0

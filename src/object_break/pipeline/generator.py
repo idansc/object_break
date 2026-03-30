@@ -68,6 +68,7 @@ class SampleGenerator:
         pc = self.config.physics
         sim = FragmentSimulation(
             fragments=fragments,
+            mode=pc.mode,
             impact_point=impact_point,
             impact_direction=impact_direction,
             force=fc.force_magnitude,
@@ -77,7 +78,9 @@ class SampleGenerator:
             damping=pc.damping,
             rng=self.rng,
         )
-        sim_result = sim.run(num_frames=pc.num_frames, fps=pc.fps)
+        sim_result = sim.run(
+            num_frames=pc.num_frames, fps=pc.fps, hold_frames=pc.hold_frames
+        )
 
         # Render
         rc = self.config.render
@@ -97,6 +100,7 @@ class SampleGenerator:
             fragments=fragments,
             sim_result=sim_result,
             output_dir=output_dir,
+            intact_mesh=mesh,
             save_video=rc.save_video,
             save_frames=rc.save_frames,
         )

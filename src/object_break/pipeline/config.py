@@ -16,8 +16,10 @@ class FractureConfig(BaseModel):
 
 
 class PhysicsConfig(BaseModel):
-    gravity: list[float] = Field(default=[0.0, 0.0, -9.81])
+    mode: str = "explode"  # explode, impact, split_half, scatter, peel, directional
+    gravity: list[float] = Field(default=[0.0, 0.0, 0.0])
     num_frames: int = Field(default=60, ge=1)
+    hold_frames: int = Field(default=9, ge=0)
     fps: float = Field(default=30.0, ge=1.0)
     angular_velocity_scale: float = 3.0
     velocity_scale: float = 2.0
